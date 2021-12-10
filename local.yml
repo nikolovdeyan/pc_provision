@@ -1,6 +1,6 @@
 ---
 - name: Provision Desktop
-  hosts: desktops laptops
+  hosts: localhost
   become: yes
 
   vars_prompt:
