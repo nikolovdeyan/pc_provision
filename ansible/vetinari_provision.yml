@@ -1,0 +1,13 @@
+---
+- name: Provision Desktop
+  hosts: desktop
+  become: yes
+
+  vars_prompt:
+    - name: HOSTNAME
+      prompt: "Enter a hostname for the machine"
+      default: "vetinari"
+      private: no
+
+  tasks:
+    - include_tasks: tasks/system_prerequisites.yml

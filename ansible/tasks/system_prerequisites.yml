@@ -1,0 +1,25 @@
+- name: set hostname
+  become: yes
+  command: hostnamectl set-hostname "{{ HOSTNAME }}"
+
+- name: update system
+  become: yes
+  command: pacman -Syu -noconfirm
+
+- name: install system prerequisites
+  become: yes
+  package:
+    state: present
+    name:
+      - wget
+      - arandr
+      - htop
+      - alsa-utils
+
+- name: install system fonts
+  become: yes
+  package:
+    state: present
+    name:
+      - otf-fantasque-sans-mono
+      - ttc-iosevka
