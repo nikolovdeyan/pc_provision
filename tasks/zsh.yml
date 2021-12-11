@@ -4,10 +4,23 @@
     name:
       - zsh
 
-- name: instal oh-my-zsh
+- name: clone oh-my-zsh repository
+  become: yes
+  become_user: '{{ USERNAME }}'
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    clone: yes
+
+- name: copy oh-my-zsh default .zshrc
+  become: yes
+  become_user: '{{ USERNAME }}'
+  ansible.builtin.copy:
+    src: ~/.oh-my-zsh/templates/zshrc.zsh-template
+    dest: ~/.zshrc
+    
+- name: change shell to zsh
   become: yes
   become_user: '{{ USERNAME }}'
   ansible.builtin.command:
-    chdir: ~
-    cmd: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
-
+    cmd: chsh -s $(which zsh)
