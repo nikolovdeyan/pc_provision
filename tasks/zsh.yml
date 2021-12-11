@@ -18,6 +18,7 @@
   ansible.builtin.copy:
     src: ~/.oh-my-zsh/templates/zshrc.zsh-template
     dest: ~/.zshrc
+    remote_src: yes
     
 - name: change shell to zsh
   become: yes
