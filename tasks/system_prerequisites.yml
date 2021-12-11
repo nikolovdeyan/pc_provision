@@ -4,7 +4,7 @@
 
 - name: update system
   become: yes
-  command: pacman -Syu -noconfirm
+  command: pacman -Syu --noconfirm
 
 - name: install system prerequisites
   become: yes
