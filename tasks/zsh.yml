@@ -5,7 +5,9 @@
       - zsh
 
 - name: instal oh-my-zsh
+  become: yes
+  become_user: '{{ USERNAME }}'
   ansible.builtin.command:
-    chdir: /home/{{ USERNAME }}
+    chdir: ~
     cmd: sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 
