@@ -1,5 +1,4 @@
 - name: install emacs
-  become: yes
   package:
     state: present
     name:
