@@ -9,5 +9,5 @@
   become_user: '{{ USERNAME }}'
   ansible.builtin.command:
     chdir: ~
-    cmd: sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+    cmd: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 
