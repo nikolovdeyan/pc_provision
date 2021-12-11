@@ -23,5 +23,5 @@
 - name: change shell to zsh
   become: yes
   become_user: '{{ USERNAME }}'
-  ansible.builtin.command:
+  ansible.builtin.shell:
     cmd: chsh -s $(which zsh)
