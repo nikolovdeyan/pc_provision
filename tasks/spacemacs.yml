@@ -17,7 +17,7 @@
   become_user: '{{ USERNAME }}'
   git:
     repo: https://github.com/nikolovdeyan/Spacemacs-Configuration.git
-    dest: ~/.emacs.d
+    dest: ~/.spacemacs.d
     clone: yes
 
 - name: delete .spacemacs file
