@@ -8,5 +8,12 @@
       default: "vetinari"
       private: no
 
+    - name: USERNAME
+      prompt: "Username for which to make the install"
+      default: "deo"
+      private: no
+
   tasks:
     - include_tasks: tasks/system_prerequisites.yml
+    - include_tasks: tasks/zsh.yml
+    - include_tasks: tasks/spacemacs.yml

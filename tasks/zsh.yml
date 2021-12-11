@@ -1,0 +1,11 @@
+- name: install zsh
+  package:
+    state: present
+    name:
+      - zsh
+
+- name: instal oh-my-zsh
+  ansible.builtin.command:
+    chdir: /home/{{ USERNAME }}
+    cmd: sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+

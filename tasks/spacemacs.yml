@@ -1,0 +1,23 @@
+- name: install emacs
+  become: yes
+  package:
+    state: present
+    name:
+      - emacs
+
+- name: install spacemacs
+  git:
+    repo: https://github.com/syl20bnr/spacemacs.git
+    dest: /home/{{ USERNAME }}/.emacs.d
+    clone: yes
+
+- name: apply spacemacs configuration
+  git:
+    repo: https://github.com/nikolovdeyan/Spacemacs-Configuration.git
+    dest: /home/{{ USERNAME }}/.emacs.d
+    clone: yes
+
+- name: delete .spacemacs file
+  file:
+    state: absent
+    path: /home/{{ USERNAME }}/.spacemacs

@@ -15,6 +15,7 @@
       - arandr
       - htop
       - alsa-utils
+      - vim
 
 - name: install system fonts
   become: yes
