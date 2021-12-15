@@ -23,7 +23,6 @@
 
 - name: install system prerequisites [AUR]
   become: yes
-  aur:
   become_user: '{{ USERNAME }}'
   kewlfft.aur.aur:
     use: yay
