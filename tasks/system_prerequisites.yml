@@ -17,14 +17,22 @@
       - alsa-utils
       - vim
       - xorg-setxkbmap
+      - konsole
+      - rofi
+      - nitrogen
 
 - name: install system prerequisites [AUR]
   become: yes
   aur:
+  become_user: '{{ USERNAME }}'
+  kewlfft.aur.aur:
     use: yay
     state: present
     name:
       - dropbox
+      - polybar
+      - keepass
+      - rofi-file-browser-extended-git
 
 - name: install system fonts
   become: yes
