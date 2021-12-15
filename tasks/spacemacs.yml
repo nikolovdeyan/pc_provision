@@ -1,13 +1,13 @@
 - name: install emacs
-  package:
+  become: yes
+  community.general.pacman:
     state: present
-    name:
-      - emacs
+    name: emacs
 
 - name: install spacemacs
   become: yes
   become_user: '{{ USERNAME }}'
-  git:
+  ansible.builtin.git:
     repo: https://github.com/syl20bnr/spacemacs.git
     dest: ~/.emacs.d
     clone: yes
@@ -15,7 +15,7 @@
 - name: apply spacemacs configuration
   become: yes
   become_user: '{{ USERNAME }}'
-  git:
+  ansible.builtin.git:
     repo: https://github.com/nikolovdeyan/Spacemacs-Configuration.git
     dest: ~/.spacemacs.d
     clone: yes
