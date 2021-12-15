@@ -17,7 +17,7 @@
       - alsa-utils
       - vim
       - setxkbmap
-      -dropbox
+      - dropbox
 
 - name: install system fonts
   become: yes
