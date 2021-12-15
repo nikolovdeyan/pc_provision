@@ -19,8 +19,3 @@
     src: ~/.oh-my-zsh/templates/zshrc.zsh-template
     dest: ~/.zshrc
     remote_src: yes
-    
-- name: change shell to zsh
-  become: yes
-  become_user: '{{ USERNAME }}'
-  ansible.builtin.command: "chsh -s $(which zsh)"
