@@ -16,8 +16,7 @@
       - htop
       - alsa-utils
       - vim
-      - setxkbmap
-      - dropbox
+      - xorg-setxkbmap
 
 - name: install system fonts
   become: yes
