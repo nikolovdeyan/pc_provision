@@ -1,9 +1,8 @@
 - name: install zsh
   become: yes
   community.general.pacman:
+    name: zsh
     state: present
-    name:
-      - zsh
 
 - name: clone oh-my-zsh repository
   become: yes
@@ -21,9 +20,8 @@
     dest: ~/.zshrc
     remote_src: yes
 
-- name: make zsh the default shell
+- name: make zsh the default shell for the user
   become: yes
   user:
     name: '{{ USERNAME }}'
     shell: /usr/bin/zsh
-
