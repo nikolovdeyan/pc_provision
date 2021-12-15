@@ -21,9 +21,9 @@
 - name: install system prerequisites [AUR]
   become: yes
   kewlfft.aur.aur:
-    name: dropbox
     use: yay
-    state: present
+    name:
+      - dropbox
 
 - name: install system fonts
   become: yes
