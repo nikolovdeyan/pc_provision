@@ -20,8 +20,9 @@
 
 - name: install system prerequisites [AUR]
   become: yes
-  kewlfft.aur.aur:
+  aur:
     use: yay
+    state: present
     name:
       - dropbox
 
