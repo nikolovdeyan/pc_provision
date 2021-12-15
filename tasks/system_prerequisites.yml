@@ -20,6 +20,10 @@
       - konsole
       - rofi
       - nitrogen
+    register: prereqs_result
+
+- debug:
+    var: prereqs_result.stdout_lines
 
 - name: install system prerequisites [AUR]
   become: yes
@@ -32,6 +36,10 @@
       - polybar
       - keepass
       - rofi-file-browser-extended-git
+    register: prereqs_aur_result
+
+- debug:
+    var: prereqs_result_aur.stdout_lines
 
 - name: install system fonts
   become: yes
