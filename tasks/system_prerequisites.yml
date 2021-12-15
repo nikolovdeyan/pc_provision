@@ -16,6 +16,8 @@
       - htop
       - alsa-utils
       - vim
+      - setxkbmap
+      -dropbox
 
 - name: install system fonts
   become: yes
