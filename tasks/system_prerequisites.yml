@@ -8,7 +8,7 @@
 
 - name: install system prerequisites
   become: yes
-  package:
+  community.general.pacman:
     state: present
     name:
       - wget
@@ -18,9 +18,16 @@
       - vim
       - xorg-setxkbmap
 
+- name: install system prerequisites [AUR]
+  become: yes
+  kewlfft.aur.aur:
+    name: dropbox
+    use: yay
+    state: present
+
 - name: install system fonts
   become: yes
-  package:
+  community.general.pacman:
     state: present
     name:
       - otf-fantasque-sans-mono
