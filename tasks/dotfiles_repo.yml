@@ -1,0 +1,12 @@
+# ----------------------------------------------------------------------------
+# Task that clones the dotfiles repo locally
+# 
+# ----------------------------------------------------------------------------
+
+- name: clone dotfiles repository
+  become: yes
+  become_user: '{{ USERNAME }}'
+  ansible.builtin.git:
+    repo: https://github.com/nikolovdeyan/Dotfiles.git
+    dest: ~/Dotfiles
+    clone: yes

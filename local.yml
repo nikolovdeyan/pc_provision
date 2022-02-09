@@ -1,18 +1,23 @@
 ---
 - name: Provision Desktop
-  hosts: localhost
+  hosts: all
+
   collections:
     - kewlfft.aur
+
   vars_prompt:
     - name: HOSTNAME
       prompt: "Enter a hostname for the machine"
       default: "vetinari"
       private: no
+
     - name: USERNAME
       prompt: "Username for which to make the install"
       default: "deo"
       private: no
+
   tasks:
     - include_tasks: tasks/system_prerequisites.yml
+    - include_tasks: tasks/dotfiles_repo.yml
     - include_tasks: tasks/zsh.yml
     - include_tasks: tasks/spacemacs.yml

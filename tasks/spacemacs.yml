@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------
+# This task installs and configures my Spacemacs text editor
+#
+# Starting emacs will trigger installation of the packages listed in
+# the configuration files.
+# ----------------------------------------------------------------------------
 - name: install emacs
   become: yes
   community.general.pacman:
